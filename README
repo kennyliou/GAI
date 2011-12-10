@@ -1,0 +1,9 @@
+12-07-2011
+project starts
+
+12-09-2011
+Kenny: 
+Looking into color differences
+the formula we are going to use is called CIE94
+However, CIE94 is cased on Lab model, need to write a converter first to convert RGB to Lab
+Then use LAB to do CIE94 calculation
