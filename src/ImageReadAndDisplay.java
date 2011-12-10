@@ -18,12 +18,27 @@ public class ImageReadAndDisplay extends Component{
 	BufferedImage img;
 	BufferedImage img_result;
 	Color paint = new Color(42, 255, 0);
+	
 	 
     public void paint(Graphics g) {
+    	int ow = img.getWidth();
+    	int oh = img.getHeight();
+    	int oldColor = 0;
+    	int newColor = 0;
         g.drawImage(img, 0, 0, null);
-        for(int y = 0; y < 20; y++) {
-        	for(int x = 0; x < img_result.getWidth(); x++) {
-        		img_result.setRGB(x, y, paint.getRGB());
+ 
+        for(int y = 0; y < oh; y++) {
+        	for(int x = 0; x < ow; x++) {
+        		if(x == 0 && y == 0) {
+        			oldColor = img.getRGB(x, y);
+        		}
+        		else {
+        			newColor = img.getRGB(x, y);
+        			if(Math.abs(newColor - oldColor) > 50) { 
+        				img_result.setRGB(x, y, paint.getRGB());
+        				oldColor = newColor;
+        			}
+        		}
         	}
         }
         g.drawImage(img_result, img_result.getWidth() + 10, 0, null);
