@@ -15,6 +15,8 @@ import javax.swing.JFrame;
 // test
 public class ImageReadAndDisplay extends Component{
 	
+	//fork is bastard!
+	
 	BufferedImage img;
 	BufferedImage img_result;
 	Color paint = new Color(42, 255, 0);
