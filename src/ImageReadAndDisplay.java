@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 
-
+// test
 public class ImageReadAndDisplay extends Component{
 	
 	BufferedImage img;
