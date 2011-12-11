@@ -13,4 +13,13 @@ public class LAB {
 		this.a = a;
 		this.b = b;
 	}
+	public double getL() {
+		return this.L;
+	}
+	public double geta() {
+		return this.a;
+	}
+	public double getb() {
+		return this.b;
+	}
 }

@@ -36,7 +36,10 @@ public class ImageReadAndDisplay extends Component{
         		}
         		else {
         			newColor = img.getRGB(x, y);
-        			if(Math.abs(newColor - oldColor) > 50) { 
+        			double diff = ColorDifference.findDifference(newColor, oldColor);
+        			// System.out.println(diff);
+        			// use 30 for a big color difference
+        			if( diff > 30) { 
         				img_result.setRGB(x, y, paint.getRGB());
         				oldColor = newColor;
         			}
@@ -79,5 +82,14 @@ public class ImageReadAndDisplay extends Component{
         f.add(new ImageReadAndDisplay("ABC.jpg"));
         f.pack();
         f.setVisible(true);
+		
+//		// test color convertor
+//		LAB lab = ColorConvertor.RGBtoLAB(22, 33, 11);
+//		System.out.println("CIE-LAB: ");
+//		System.out.println("L: " + lab.getL() + ", should be around 11.152"); 
+//		System.out.println("a: " + lab.geta() + ", should be around -9.896");
+//		System.out.println("b: " + lab.getb() + ", should be around 11.864");
+		
+		
 	}
 }

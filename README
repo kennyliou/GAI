@@ -7,3 +7,10 @@ Looking into color differences
 the formula we are going to use is called CIE94
 However, CIE94 is cased on Lab model, need to write a converter first to convert RGB to Lab
 Then use LAB to do CIE94 calculation
+
+12-10-2011
+
+Kenny:
+Finish color difference. Now we have a function COlorDifference.findDifference(rgb1, rgb2) to find the color difference.
+The value can be from 0 to 255 (also 0.5 and so on).
+Right now we highlight any difference that's greater than 30. We still need to find a better value (maybe the value change when dealing different color?)
